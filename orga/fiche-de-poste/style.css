@@ -1,0 +1,378 @@
+:root{
+  --bg: #e9edf3;
+  --paper: #ffffff;
+  --ink: #111;
+  --line: #000;
+  --grey: #bfbfbf;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  padding:20px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ======= TOP (preview) ======= */
+.preview-zone{
+  width: 100%;
+}
+
+.sheet-shell{
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+
+/* A4 paysage : 1123 x 794 px (référence écran) */
+.sheet.a4.landscape{
+  width: 1123px;
+  height: 794px;
+  background: var(--paper);
+  position: relative;
+  padding: 22px 22px 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+  overflow: hidden;
+  transform-origin: top center;
+}
+
+/* Scale automatique pour ne jamais dépasser l'écran */
+.sheet{
+  max-width: 100%;
+}
+
+.top-actions{
+  display:flex;
+  gap:10px;
+  margin: 12px 0 20px;
+  justify-content:center;
+}
+
+.top-actions button{
+  border: 1px solid #cbd5e1;
+  background:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* Header */
+.sheet-header{
+  display:flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  margin-bottom: 10px;
+}
+
+.commune{
+  font-size: 26px;
+  font-weight: 700;
+  color:#7a7a7a;
+}
+
+.main-title{
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+.update{
+  font-size: 14px;
+  color:#555;
+  margin-top: 6px;
+}
+
+/* Ligne intitulé poste */
+.poste-line{
+  display:flex;
+  gap: 10px;
+  align-items: baseline;
+  margin: 4px 0 12px;
+}
+
+.poste-label{
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.poste-value{
+  font-weight: 800;
+  font-size: 22px;
+}
+
+/* Grid 3 colonnes */
+.grid{
+  display:grid;
+  grid-template-columns: 360px 1fr 340px;
+  gap: 14px;
+  height: 610px;
+}
+
+/* Blocs */
+.bloc{
+  border: 2px solid var(--line);
+  padding: 10px 12px;
+  background:#fff;
+}
+
+.bloc.grey{
+  background: var(--grey);
+  border: none;
+  padding: 12px 14px;
+}
+
+.bloc-title{
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.row{
+  font-size: 15px;
+  line-height: 1.35;
+  margin: 2px 0;
+}
+
+.text{
+  font-size: 14px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+
+.subline{
+  font-size: 13px;
+  margin: 6px 0 4px;
+}
+
+.bullets{
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bullets.small .bullet{
+  font-size: 13px;
+}
+
+.bullet{
+  display:flex;
+  gap: 10px;
+  align-items:flex-start;
+  white-space: pre-wrap;
+  line-height: 1.35;
+  font-size: 14px;
+}
+
+.bullet::before{
+  content:"•";
+  font-size: 22px;
+  line-height: 1;
+  margin-top: -2px;
+}
+
+/* hauteur des gros blocs */
+.bloc.big{
+  height: 420px;
+}
+
+/* Footer */
+.sheet-footer{
+  position:absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 12px;
+  font-size: 18px;
+  color:#222;
+}
+
+/* ======= BOTTOM (editor) ======= */
+.editor-zone{
+  margin-top: 18px;
+  background:#fff;
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid #d7dee8;
+}
+
+.editor-zone h2{
+  margin:0 0 12px;
+  font-size: 18px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap: 14px;
+}
+
+.form-card{
+  border: 1px solid #d7dee8;
+  border-radius: 12px;
+  padding: 12px;
+  background:#fbfdff;
+}
+
+.form-card h3{
+  margin:0 0 10px;
+  font-size: 16px;
+}
+
+label{
+  display:block;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+input, textarea{
+  width:100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+textarea{
+  min-height: 72px;
+  resize: vertical;
+}
+
+.form-actions{
+  margin-top: 10px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.form-actions button{
+  border: 1px solid #cbd5e1;
+  background:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+
+/* ====== COMPACT A4 (remplace les tailles) ====== */
+
+/* Page A4 paysage : on garde le format, mais on compacte tout */
+.sheet.a4.landscape{
+  padding: 16px 16px 12px;   /* ↓ */
+}
+
+/* Header */
+.commune{
+  font-size: 20px;           /* 26 -> 20 */
+}
+
+.main-title{
+  font-size: 34px;           /* 44 -> 34 */
+  letter-spacing: .3px;
+}
+
+.update{
+  font-size: 11px;           /* 14 -> 11 */
+  margin-top: 4px;
+}
+
+/* Ligne intitulé poste */
+.poste-line{
+  margin: 2px 0 8px;         /* ↓ */
+  gap: 8px;
+}
+
+.poste-label{
+  font-size: 16px;           /* 22 -> 16 */
+}
+
+.poste-value{
+  font-size: 16px;           /* 22 -> 16 */
+}
+
+/* Grid + colonnes un peu plus étroites */
+.grid{
+  grid-template-columns: 330px 1fr 320px; /* ↓ */
+  gap: 10px;                               /* 14 -> 10 */
+  height: 595px;                           /* 610 -> 595 */
+}
+
+/* Blocs */
+.bloc{
+  border-width: 2px;
+  padding: 8px 10px;        /* ↓ */
+}
+
+.bloc.grey{
+  padding: 10px 12px;       /* ↓ */
+}
+
+/* Titres de blocs */
+.bloc-title{
+  font-size: 12px;          /* 15 -> 12 */
+  margin-bottom: 4px;       /* ↓ */
+}
+
+/* Lignes d'identité */
+.row{
+  font-size: 12px;          /* 15 -> 12 */
+  line-height: 1.22;        /* ↓ */
+  margin: 1px 0;            /* ↓ */
+}
+
+/* Paragraphes */
+.text{
+  font-size: 11px;          /* 14 -> 11 */
+  line-height: 1.22;        /* ↓ */
+}
+
+/* Sous-titres */
+.subline{
+  font-size: 11px;          /* 13 -> 11 */
+  margin: 5px 0 3px;        /* ↓ */
+}
+
+/* Puces */
+.bullets{
+  gap: 6px;                 /* 8 -> 6 */
+}
+
+.bullet{
+  font-size: 11px;          /* 14 -> 11 */
+  line-height: 1.22;
+  gap: 8px;
+}
+
+.bullets.small .bullet{
+  font-size: 11px;          /* 13 -> 11 */
+}
+
+.bullet::before{
+  font-size: 16px;          /* 22 -> 16 */
+  margin-top: -1px;
+}
+
+/* Gros blocs : moins hauts pour éviter débordement */
+.bloc.big{
+  height: 365px;            /* 420 -> 365 */
+}
+
+/* Footer */
+.sheet-footer{
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
+  font-size: 14px;          /* 18 -> 14 */
+}
+
+/* Boutons haut : un peu plus petits */
+.top-actions button{
+  padding: 8px 12px;        /* ↓ */
+  font-size: 13px;
+}

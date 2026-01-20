@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fiche de poste - Plumieux</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- APERÇU (EN HAUT) -->
+  <section class="preview-zone">
+    <div class="sheet-shell">
+      <div class="sheet a4 landscape" id="sheet">
+        <!-- Header -->
+        <div class="sheet-header">
+          <div class="header-left">
+            <div class="commune" id="p_commune">Commune de Coëtlogon</div>
+            <div class="main-title">FICHE DE POSTE</div>
+          </div>
+          <div class="header-right">
+            <div class="update">Dernière actualisation le : <span id="p_date">20/02/2023</span></div>
+          </div>
+        </div>
+
+        <div class="poste-line">
+          <div class="poste-label">INTITULE DU POSTE (métier) :</div>
+          <div class="poste-value" id="p_intitule">Agent d’entretien des bâtiments communaux</div>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid">
+          <!-- COL LEFT -->
+          <div class="col-left">
+            <div class="bloc identite grey">
+              <div class="row"><b>Nom :</b> <span id="p_nom">GRILLAS</span></div>
+              <div class="row"><b>Prénom :</b> <span id="p_prenom">Sylvie</span></div>
+              <div class="row"><b>Date de naissance :</b> <span id="p_naissance">13/01/1968</span></div>
+              <div class="row"><b>Date d’entrée dans la collectivité :</b> <span id="p_entree_collectivite">15/10/2020</span></div>
+              <div class="row"><b>Date d’entrée dans la fonction :</b> <span id="p_entree_fonction">—</span></div>
+              <div class="row"><b>Qualité :</b> <span id="p_qualite">Non-titulaire</span></div>
+              <div class="row"><b>Cadre d’emplois :</b> <span id="p_cadre">Catégorie C – Groupe hiérarchique 1</span></div>
+              <div class="row"><b>Grade/Catégorie :</b> <span id="p_grade">Adjoint technique territorial</span></div>
+              <div class="row"><b>Temps de travail :</b> <span id="p_temps">6 heures / semaine</span></div>
+              <div class="row"><b>Service :</b> <span id="p_service">Entretien des locaux</span></div>
+              <div class="row"><b>Supérieur hiérarchique direct :</b> <span id="p_superieur">Manuel MACÉ (DGS)</span></div>
+            </div>
+
+            <div class="bloc">
+              <div class="bloc-title">TRAVAIL EN COLLABORATION :</div>
+              <div class="mini">
+                <div><b>INTERNE :</b> <span id="p_collab_interne">secrétariat / élus</span></div>
+                <div><b>EXTERNE :</b> <span id="p_collab_externe">usagers / associations</span></div>
+              </div>
+            </div>
+
+            <div class="bloc">
+              <div class="bloc-title">MOYENS MIS A DISPOSITION :</div>
+              <div class="text" id="p_moyens">
+                Techniques : EPI (blouse, charlotte et chaussures de sécurité), pharmacie, produits d’entretien, matériel d’entretien.
+              </div>
+            </div>
+
+            <div class="bloc">
+              <div class="bloc-title">SPECIFICITES LIEES AU POSTE :</div>
+              <div class="subline"><b>Contexte de travail</b></div>
+              <div class="text" id="p_spec_contexte">
+                Contraintes de bruit (inox, machines), manipulation de produits chimiques nécessitant le suivi d’un protocole précis.
+              </div>
+              <div class="subline" style="margin-top:8px;"><b>Contraintes physiques</b></div>
+              <div class="text" id="p_spec_physiques">
+                Station debout prolongée et piétinement, gestes répétitifs.
+              </div>
+            </div>
+          </div>
+
+          <!-- COL CENTER -->
+          <div class="col-center">
+            <div class="bloc">
+              <div class="bloc-title">OBJET DU POSTE :</div>
+              <div class="text" id="p_objet">Agent chargé de l’entretien des bâtiments communaux</div>
+            </div>
+
+            <div class="bloc big">
+              <div class="bloc-title">MISSIONS PRINCIPALES :</div>
+              <div class="bullets" id="p_missions_principales">
+                <div class="bullet">Ménage dans les bâtiments communaux</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COL RIGHT -->
+          <div class="col-right">
+            <div class="bloc">
+              <div class="bloc-title">MISSIONS COMPLEMENTAIRES :</div>
+              <div class="bullets" id="p_missions_complementaires">
+                <div class="bullet">Effectue les états des lieux entrée/sortie de la salle des fêtes.</div>
+              </div>
+            </div>
+
+            <div class="bloc big">
+              <div class="bloc-title">COMPETENCES ATTENDUES :</div>
+
+              <div class="subline"><b>Compétences techniques</b></div>
+              <div class="text" id="p_comp_tech">
+                Connaître et appliquer les règles d’hygiène, connaître et appliquer les principes de nettoyage et de désinfection des locaux, connaître et maîtriser la sécurité liée aux techniques d’entretien.
+              </div>
+
+              <div class="subline" style="margin-top:10px;"><b>Compétences relationnelles et sociales</b></div>
+              <div class="bullets small" id="p_comp_rel">
+                <div class="bullet">Dynamisme, réactivité, esprit d’initiative.</div>
+                <div class="bullet">Être autonome au quotidien dans l’organisation du travail mais savoir se référer à l’autorité.</div>
+                <div class="bullet">Disponibilité.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer signature -->
+        <div class="sheet-footer">
+          L’agent a pris connaissance et a reçu une <u>copie</u> de sa fiche de poste le ……………..  Signature de l’agent
+        </div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <button id="btnPdf" type="button">Exporter PDF</button>
+      <button id="btnPrint" type="button">Imprimer</button>
+    </div>
+  </section>
+
+  <!-- SAISIE (EN BAS) -->
+  <section class="editor-zone">
+    <h2>Saisie</h2>
+
+    <div class="form-grid">
+      <div class="form-card">
+        <h3>En-tête / Identité</h3>
+        <label>Commune <input id="f_commune" value="Commune de Coëtlogon"></label>
+        <label>Date (dernière actualisation) <input id="f_date" value="20/02/2023"></label>
+        <label>Intitulé du poste <input id="f_intitule" value="Agent d’entretien des bâtiments communaux"></label>
+
+        <label>Nom <input id="f_nom" value="GRILLAS"></label>
+        <label>Prénom <input id="f_prenom" value="Sylvie"></label>
+        <label>Date de naissance <input id="f_naissance" value="13/01/1968"></label>
+        <label>Date entrée collectivité <input id="f_entree_collectivite" value="15/10/2020"></label>
+        <label>Date entrée fonction <input id="f_entree_fonction" value="—"></label>
+        <label>Qualité <input id="f_qualite" value="Non-titulaire"></label>
+        <label>Cadre d’emplois <input id="f_cadre" value="Catégorie C – Groupe hiérarchique 1"></label>
+        <label>Grade/Catégorie <input id="f_grade" value="Adjoint technique territorial"></label>
+        <label>Temps de travail <input id="f_temps" value="6 heures / semaine"></label>
+        <label>Service <input id="f_service" value="Entretien des locaux"></label>
+        <label>Supérieur hiérarchique direct <input id="f_superieur" value="Manuel MACÉ (DGS)"></label>
+      </div>
+
+      <div class="form-card">
+        <h3>Contenu</h3>
+
+        <label>Objet du poste
+          <textarea id="f_objet">Agent chargé de l’entretien des bâtiments communaux</textarea>
+        </label>
+
+        <label>Missions principales (1 par ligne)
+          <textarea id="f_missions_principales">Ménage dans les bâtiments communaux</textarea>
+        </label>
+
+        <label>Missions complémentaires (1 par ligne)
+          <textarea id="f_missions_complementaires">Effectue les états des lieux entrée/sortie de la salle des fêtes.</textarea>
+        </label>
+
+        <label>Travail en collaboration - Interne
+          <input id="f_collab_interne" value="secrétariat / élus">
+        </label>
+
+        <label>Travail en collaboration - Externe
+          <input id="f_collab_externe" value="usagers / associations">
+        </label>
+
+        <label>Moyens mis à disposition
+          <textarea id="f_moyens">Techniques : EPI (blouse, charlotte et chaussures de sécurité), pharmacie, produits d’entretien, matériel d’entretien.</textarea>
+        </label>
+
+        <label>Spécificités - Contexte de travail
+          <textarea id="f_spec_contexte">Contraintes de bruit (inox, machines), manipulation de produits chimiques nécessitant le suivi d’un protocole précis.</textarea>
+        </label>
+
+        <label>Spécificités - Contraintes physiques
+          <textarea id="f_spec_physiques">Station debout prolongée et piétinement, gestes répétitifs.</textarea>
+        </label>
+
+        <label>Compétences techniques
+          <textarea id="f_comp_tech">Connaître et appliquer les règles d’hygiène, connaître et appliquer les principes de nettoyage et de désinfection des locaux, connaître et maîtriser la sécurité liée aux techniques d’entretien.</textarea>
+        </label>
+
+        <label>Compétences relationnelles et sociales (1 par ligne)
+          <textarea id="f_comp_rel">Dynamisme, réactivité, esprit d’initiative.
+Être autonome au quotidien dans l’organisation du travail mais savoir se référer à l’autorité.
+Disponibilité.</textarea>
+        </label>
+
+        <div class="form-actions">
+          <button id="btnApply" type="button">Mettre à jour l’aperçu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- libs export PDF -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>

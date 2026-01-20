@@ -409,14 +409,40 @@ function drawLinksShifted(nodes, byId, shiftX) {
     }
   }
 
-  async function exportPNG() {
-    const canvas = await html2canvas(chartWrapEl, { backgroundColor: "#ffffff", scale: 2 });
-    const url = canvas.toDataURL("image/png");
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "organigramme.png";
-    a.click();
-  }
+async function exportPNG() {
+  const original = document.querySelector(".sheet.a4.landscape");
+
+  // 1. Cloner la fiche
+  const clone = original.cloneNode(true);
+
+  // 2. Forcer taille A4 réelle
+  clone.style.width = "1123px";
+  clone.style.height = "794px";
+  clone.style.transform = "none";
+  clone.style.maxWidth = "none";
+  clone.style.position = "fixed";
+  clone.style.left = "-2000px";
+  clone.style.top = "0";
+  clone.style.background = "#fff";
+
+  document.body.appendChild(clone);
+
+  // 3. Capture haute qualité
+  const canvas = await html2canvas(clone, {
+    backgroundColor: "#ffffff",
+    scale: 2,          // 🔥 netteté
+    useCORS: true
+  });
+
+  // 4. Nettoyage
+  document.body.removeChild(clone);
+
+  // 5. Téléchargement
+  const link = document.createElement("a");
+  link.download = "fiche-poste.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+}
 
   async function exportPDF() {
     const canvas = await html2canvas(chartWrapEl, { backgroundColor: "#ffffff", scale: 2 });
