@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Organigramme (texte indenté)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Générateur d’organigramme (TAB → hiérarchie)</h1>
+  </header>
+
+  <!-- ORGANIGRAMME EN HAUT (100%) -->
+  <section class="stage" id="stage">
+    <div class="chartTitle" id="chartTitle"></div>
+
+    <div class="chartWrap" id="chartWrap">
+      <svg class="links" id="links"></svg>
+      <div class="nodes" id="nodes"></div>
+    </div>
+  </section>  
+
+  <!-- SAISIE EN BAS -->
+  <section class="editor">
+    <div class="editorBox" id="editorBox">
+  <pre class="syntax" id="syntax"></pre>
+  <textarea id="input" spellcheck="false"></textarea>
+</div>
+
+
+    <div class="toolbar">
+  <button id="btnRender" type="button">Générer</button>
+  <button id="btnExample" type="button">Exemple</button>
+  <button id="btnClear" type="button">Vider</button>
+  <button id="btnSaveTxt" type="button">Enregistrer .txt</button>
+
+  <label class="fileBtn">
+    Charger .txt
+    <input id="fileTxt" type="file" accept=".txt,text/plain" />
+  </label>
+
+  <span class="spacer"></span>
+  <button id="btnPng" type="button">Exporter PNG</button>
+  <button id="btnPdf" type="button">Exporter PDF</button>
+</div>
+
+
+    <div class="hint">
+      <b>Règles :</b> Ligne 1 = <b>TITRE</b> • Ligne 2 = début de l’orga • TAB = (ou 2 espaces = 1 niveau)
+    </div>
+  </section>
+
+  <!-- libs export -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
