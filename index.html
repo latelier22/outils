@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OUTILS</title>
+
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --border: #d7dbe6;
+      --text: #1b1f2a;
+      --muted: #5b6476;
+      --shadow: 0 10px 26px rgba(16,24,40,.12);
+
+      --radius: 18px;
+
+      /* couleurs "orga" */
+      --c0a: #4e86ff; --c0b: #2e66ea;
+      --c1a: #ffb36b; --c1b: #ff8f4d;
+      --c2a: #d8f0ff; --c2b: #b6dcff;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    /* Header */
+    .topbar{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(#fbfcff, #f6f7fb);
+      box-shadow: var(--shadow);
+      padding: 16px 16px 12px;
+      overflow:hidden;
+    }
+    .title{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      margin:0;
+      font-weight: 900;
+      letter-spacing: .4px;
+      font-size: 18px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(180deg, var(--c0a), var(--c0b));
+      box-shadow: 0 6px 14px rgba(46,102,234,.25);
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .subtitle{
+      margin: 8px 2px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    /* Layout "parent -> enfants" */
+    .tree{
+      margin-top: 14px;
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      gap: 12px;
+    }
+
+    .parentCard{
+      width: min(520px, 100%);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: #fff;
+      background: linear-gradient(180deg, var(--c0a), var(--c0b));
+      box-shadow: 0 10px 22px rgba(46,102,234,.22);
+      border: 1px solid rgba(255,255,255,.35);
+      text-align:center;
+      font-weight: 900;
+      letter-spacing:.4px;
+      font-size: 16px;
+    }
+
+    .connector{
+      width: 2px;
+      height: 18px;
+      background: rgba(122,131,153,.55);
+      border-radius: 999px;
+    }
+
+    .children{
+      width: 100%;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    a.toolCard{
+      text-decoration:none;
+      color: inherit;
+      width: min(420px, 100%);
+      border-radius: 16px;
+      padding: 14px 14px;
+      background: var(--panel);
+      border: 1px solid rgba(215,219,230,.85);
+      box-shadow: 0 8px 16px rgba(0,0,0,.08);
+      transition: transform .12s ease, box-shadow .12s ease;
+      display:flex;
+      gap: 12px;
+      align-items: stretch;
+      overflow:hidden;
+      position: relative;
+    }
+    a.toolCard:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(0,0,0,.12);
+    }
+
+    .stripe{
+      width: 10px;
+      border-radius: 14px;
+      flex: 0 0 10px;
+      background: linear-gradient(180deg, var(--c1a), var(--c1b));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+    }
+    .stripe.alt{
+      background: linear-gradient(180deg, var(--c2a), var(--c2b));
+    }
+
+    .cardBody{
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 2px 2px;
+    }
+    .cardTitle{
+      margin: 0;
+      font-weight: 900;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+    .cardDesc{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .pill{
+      margin-top: 10px;
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(27,31,42,.05);
+      border: 1px solid rgba(215,219,230,.85);
+      font-size: 12px;
+      color: rgba(27,31,42,.85);
+      font-weight: 700;
+    }
+
+    .footerHint{
+      margin-top: 14px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 520px){
+      .wrap{ padding: 14px; }
+      a.toolCard{ width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <h1 class="title">
+        <span class="badge">OUTILS</span>
+        L’atelier22
+      </h1>
+      <p class="subtitle">
+        Accès rapide à tes outils (organigrammes, cartes mentales, etc.).
+      </p>
+    </header>
+
+    <section class="tree">
+      <div class="parentCard">OUTILS</div>
+      <div class="connector"></div>
+
+      <div class="children">
+        <a class="toolCard" href="./orga/index.html">
+          <div class="stripe"></div>
+          <div class="cardBody">
+            <h2 class="cardTitle">Organigramme</h2>
+            <p class="cardDesc">
+              Générateur d’organigrammes à partir d’un texte indenté (TAB / 2 espaces),
+              export PNG/PDF, cards colorées par niveau.
+            </p>
+            <span class="pill">/orga/</span>
+          </div>
+        </a>
+
+        <a class="toolCard" href="https://www.teammapper.org/map">
+          <div class="stripe alt"></div>
+          <div class="cardBody">
+            <h2 class="cardTitle">Carte mentale</h2>
+            <p class="cardDesc">
+              Carte mentale / mindmap à partir d’une structure hiérarchique.
+              (À venir ou en cours.)
+            </p>
+            <span class="pill">/mindmap/</span>
+          </div>
+        </a>
+      </div>
+
+      <div clas
